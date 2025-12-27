@@ -1,0 +1,12 @@
+
+*.log*
+*.tar
+
+# file contains sensible data
+.env 
+
+# -------------------------
+# owncloud
+owncloud_files
+owncloud_mysql
+owncloud_redis
