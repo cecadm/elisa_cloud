@@ -1,0 +1,21 @@
+name: portainer-agent
+
+services:
+  portainer_agent:
+    image: portainer/agent:latest
+    container_name: portainer_agent
+    restart: unless-stopped
+    ports:
+      - 9001:9001                # Porta usata dal Portainer Server per collegarsi
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
+    environment:
+      - AGENT_CLUSTER_ADDR=tasks.portainer_agent
+    networks:
+      - ext-network
+
+networks:
+  ext-network:
+    name: owncloud-network
+    external: true

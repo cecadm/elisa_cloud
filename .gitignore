@@ -7,6 +7,6 @@
 
 # -------------------------
 # owncloud
-owncloud_files
-owncloud_mysql
-owncloud_redis
+owncloud/owncloud_files
+owncloud/owncloud_mysql
+owncloud/owncloud_redis
